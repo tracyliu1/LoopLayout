@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="dtv_select">
+        <item>DTV</item>
+        <item>APPS</item>
+        <item>MY APPS</item>
+        <item>SETTING</item>
+        <item>BROWSER</item>
+        <item>MY FOLDER</item>
+    </string-array>
+
+</resources>
