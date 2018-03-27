@@ -5,8 +5,7 @@ a Layout for TV Launcher
 
 自定义View LoopLayout 继承 LinearLayout
 
-<img src="https://github.com/tracyliu1/LoopLayout/blob/master/screenshots/LoopLayout.gif" width = "600"/>
-
+<img src="https://github.com/tracyliu1/LoopLayout/blob/master/screenshot/LoopLayout.gif" width = "600"/>
 
 
 需求：选中的Item要有动画效果；Launcher主页上的Item支持循环。点击非选中item后，item来到中间选中位置。
