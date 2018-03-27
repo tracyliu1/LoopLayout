@@ -3,8 +3,6 @@ a Layout for TV Launcher
 
 
 
-自定义View LoopLayout 继承 LinearLayout
-
 <img src="https://github.com/tracyliu1/LoopLayout/blob/master/screenshot/LoopLayout.gif" width = "600"/>
 
 
