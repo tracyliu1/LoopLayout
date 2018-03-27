@@ -87,29 +87,32 @@ public class LoopLayout extends LinearLayout implements View.OnClickListener {
         super(context, attrs);
         mContext = context;
         mSelectNames = getResources().getStringArray(R.array.dtv_select);
-        initViews();
     }
 
     public LoopLayout(Context context) {
         super(context);
         mContext = context;
         mSelectNames = getResources().getStringArray(R.array.dtv_select);
-        initViews();
     }
 
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        initViews();
+    }
 
     private void initViews() {
 
         mLooplist = new ArrayList<>();
         for (int i = 0; i < mDTVAnim.length; i++) {
-
             LauncherBean bean = new LauncherBean(mDTVAnim[i], mDTVFronts[i], mDTVImages[i], mSelectNames[i]);
             mLooplist.add(bean);
         }
 
         LOOP_NUM = mLooplist.size();
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.loop, this, true);//attachToRoot必须为true
+        //attachToRoot必须为true 否则不能添加到root布局
+        View view = LayoutInflater.from(mContext).inflate(R.layout.loop, this, true);
         mTextView01 = (TextView) view.findViewById(R.id.tv_01);
         mTextView02 = (TextView) view.findViewById(R.id.tv_02);
         mTextView03 = (TextView) view.findViewById(R.id.tv_03);
@@ -122,8 +125,8 @@ public class LoopLayout extends LinearLayout implements View.OnClickListener {
         mImageView04 = (ImageView) view.findViewById(R.id.iv_04);
         mImageView05 = (ImageView) view.findViewById(R.id.iv_05);
 
-        iv_left_arrow = findViewById(R.id.iv_left_arrow);
-        iv_right_arrow = findViewById(R.id.iv_right_arrow);
+        iv_left_arrow = view.findViewById(R.id.iv_left_arrow);
+        iv_right_arrow = view.findViewById(R.id.iv_right_arrow);
 
         mImageView01.setOnClickListener(this);
         mImageView02.setOnClickListener(this);
@@ -132,7 +135,6 @@ public class LoopLayout extends LinearLayout implements View.OnClickListener {
 
         iv_left_arrow.setOnClickListener(this);
         iv_right_arrow.setOnClickListener(this);
-
 
         setViews(0, true);
     }
